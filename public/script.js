@@ -18,6 +18,7 @@ for (var y = 0; y < 24; y++) {
   }
 }
 
+var stats = {};
 
 var side = 12;
 
