@@ -118,7 +118,7 @@ class Gishatich extends KendaniEak {
         }
     }
 
-    dandaxDazmanal() {
+    dandaxBazmanal() {
         this.stanalNorKordinatner();
         var gishatichAxjik = random(this.yntrelVandak(this.index));
         var norVandak = random(this.yntrelVandak(0));

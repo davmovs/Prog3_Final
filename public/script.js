@@ -1,22 +1,22 @@
 var matrix = [
-  [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5], 
-  [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5], 
-  [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5], 
-  [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5], 
-  [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
-  [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5], 
-  [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5], 
-  [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5], 
+  // [0, 0, 0, 0, 0, 0, 0, 0,],
+  // [0, 0, 0, 0, 0, 0, 0, 0,],
+  // [0, 0, 0, 0, 0, 0, 0, 0,],
+  // [0, 0, 0, 0, 0, 0, 0, 0,],
+  // [0, 0, 0, 0, 0, 0, 0, 0,],
+  // [0, 0, 0, 0, 0, 0, 0, 0,],
+  // [0, 0, 0, 0, 0, 0, 0, 0,],
+  // [0, 0, 0, 0, 0, 0, 0, 0,],
 ];
 
 
-// for (var y = 0; y < 24; y++) {
-//   matrix.push([]);
-//   for (var x = 0; x < 24; x++) {
-//     var randNum = Math.floor((4 - 0 + 1) * Math.random() - 0);
-//     matrix[y][x] = randNum;
-//   }
-// }
+for (var y = 0; y < 24; y++) {
+  matrix.push([]);
+  for (var x = 0; x < 24; x++) {
+    var randNum = Math.floor((4 - 0 + 1) * Math.random() - 0);
+    matrix[y][x] = randNum;
+  }
+}
 
 
 var side = 12;
@@ -121,91 +121,90 @@ function draw() {
 
 
 
-  // if (grassArr.length == 0 && xotakerArr.length == 0 && gishatichArr.length == 0 && mardArr.length == 0) {
-  //   for (var y = 0; y < matrix.length; y++) {
-  //     if ((grassArr.length - 1) >= 4) {
-  //       break;
-  //     }
-  //     for (var x = 0; x < matrix[y].length; x++) {
-  //       var randomYForGrass = Math.floor(random(0, matrix.length - 1));
-  //       var randomXForGrass = Math.floor(random(0, matrix[y].length - 1));
-  //       matrix[randomYForGrass][randomXForGrass] = 1;
-  //       var newGrass = new Grass(randomXForGrass, randomYForGrass);
-  //       grassArr.push(newGrass);
-  //     }
-  //   }
-  // }
+  if (grassArr.length == 0 && xotakerArr.length == 0 && gishatichArr.length == 0 && mardArr.length == 0) {
+    for (var y = 0; y < matrix.length; y++) {
+      if ((grassArr.length - 1) >= 4) {
+        break;
+      }
+      for (var x = 0; x < matrix[y].length; x++) {
+        var randomYForGrass = Math.floor(random(0, matrix.length - 1));
+        var randomXForGrass = Math.floor(random(0, matrix[y].length - 1));
+        matrix[randomYForGrass][randomXForGrass] = 1;
+        var newGrass = new Grass(randomXForGrass, randomYForGrass);
+        grassArr.push(newGrass);
+      }
+    }
+  }
 
 
-  // if ((grassArr.length - 1) >= 4 && xotakerArr.length == 0 && gishatichArr.length == 0 && mardArr.length == 0) {
-  //   for (var y = 0; y < matrix.length; y++) {
-  //     for (var x = 0; x < matrix[y].length; x++) {
-  //       if (grassArr.length > 6) {
-  //         if (xotakerArr.length > 2) {
-  //           break;
-  //         }
-  //         var randomXForXotaker = Math.floor(random(0, matrix.length - 1));
-  //         var randomYForXotaker = Math.floor(random(0, matrix[y].length - 1));
-  //         matrix[randomYForXotaker][randomXForXotaker] = 2;
-  //         for (var el in grassArr) {
-  //           if (grassArr[el].x == randomXForXotaker && grassArr[el].y == randomYForXotaker) {
-  //             continue;
-  //           } else if ((xotakerArr.length - 1) <= 5) {
-  //             var norXotaker = new Xotaker(randomXForXotaker, randomYForXotaker);
-  //             xotakerArr.push(norXotaker);
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
+  if ((grassArr.length - 1) >= 4 && xotakerArr.length == 0 && gishatichArr.length == 0 && mardArr.length == 0) {
+    for (var y = 0; y < matrix.length; y++) {
+      for (var x = 0; x < matrix[y].length; x++) {
+        if (grassArr.length > 6) {
+          if (xotakerArr.length > 2) {
+            break;
+          }
+          var randomXForXotaker = Math.floor(random(0, matrix.length - 1));
+          var randomYForXotaker = Math.floor(random(0, matrix[y].length - 1));
+          matrix[randomYForXotaker][randomXForXotaker] = 2;
+          for (var el in grassArr) {
+            if (grassArr[el].x == randomXForXotaker && grassArr[el].y == randomYForXotaker) {
+              continue;
+            } else if ((xotakerArr.length - 1) <= 5) {
+              var norXotaker = new Xotaker(randomXForXotaker, randomYForXotaker);
+              xotakerArr.push(norXotaker);
+            }
+          }
+        }
+      }
+    }
+  }
 
 
-  // if ((grassArr.length - 1) >= 6 && (xotakerArr.length - 1) >= 3 && gishatichArr.length == 0 && mardArr.length == 0) {
-  //   for (var y = 0; y < matrix.length; y++) {
-  //     for (var x = 0; x < matrix[y].length; x++) {
-  //       if (xotakerArr.length > 5) {
-  //         break;
-  //       }
-  //       var randomXForGishatich = Math.floor(random(0, matrix[y].length - 1));
-  //       var randomYForGishatich = Math.floor(random(0, matrix[y].length - 1));
-  //       if (matrix[y][x] == 0 && gishatichArr.length <= 4) {
-  //         matrix[randomYForGishatich][randomXForGishatich] = 3;
-  //         var norGishatich = new Gishatich(randomXForGishatich, randomYForGishatich);
-  //         gishatichArr.push(norGishatich);
-  //       } else {
-  //         continue;
-  //       }
-  //     }
-  //   }
-  // }
+  if ((grassArr.length - 1) >= 6 && (xotakerArr.length - 1) >= 3 && gishatichArr.length == 0 && mardArr.length == 0) {
+    for (var y = 0; y < matrix.length; y++) {
+      for (var x = 0; x < matrix[y].length; x++) {
+        if (xotakerArr.length > 5) {
+          break;
+        }
+        var randomXForGishatich = Math.floor(random(0, matrix[y].length - 1));
+        var randomYForGishatich = Math.floor(random(0, matrix[y].length - 1));
+        if (matrix[y][x] == 0 && gishatichArr.length <= 4) {
+          matrix[randomYForGishatich][randomXForGishatich] = 3;
+          var norGishatich = new Gishatich(randomXForGishatich, randomYForGishatich);
+          gishatichArr.push(norGishatich);
+        } else {
+          continue;
+        }
+      }
+    }
+  }
 
 
-  // if ((grassArr.length - 1) >= 12 && (xotakerArr.length - 1) >= 6 && (gishatichArr.length - 1) >= 4 && mardArr.length == 0) {
-  //   for (var y = 0; y < matrix.length; y++) {
-  //     for (var x = 0; x < matrix[y].length; x++) {
-  //       if (mardArr.length > 4) {
-  //         break;
-  //       }
-  //       var randomXForMard = Math.floor(random(0, matrix[y].length - 1));
-  //       var randomYForMard = Math.floor(random(0, matrix[y].length - 1));
-  //       if (matrix[y][x] == 0 && mardArr.length <= 2) {
-  //         matrix[randomYForMard][randomXForMard] = 4;
-  //         var norMard = new Mard(randomXForMard, randomYForMard);
-  //         mardArr.push(norMard);
-  //       }   else {
-  //         continue;
-  //       }
-  //     }
-  //   }
-  // }
+  if ((grassArr.length - 1) >= 12 && (xotakerArr.length - 1) >= 6 && (gishatichArr.length - 1) >= 4 && mardArr.length == 0) {
+    for (var y = 0; y < matrix.length; y++) {
+      for (var x = 0; x < matrix[y].length; x++) {
+        if (mardArr.length > 4) {
+          break;
+        }
+        var randomXForMard = Math.floor(random(0, matrix[y].length - 1));
+        var randomYForMard = Math.floor(random(0, matrix[y].length - 1));
+        if (matrix[y][x] == 0 && mardArr.length <= 2) {
+          matrix[randomYForMard][randomXForMard] = 4;
+          var norMard = new Mard(randomXForMard, randomYForMard);
+          mardArr.push(norMard);
+        } else {
+          continue;
+        }
+      }
+    }
+  }
 
   event();
 
   // Exanaki voroshum, popoxutyun, ev artatpum <h1> i mej START
 
-  // exanak.exanakiPopoxutyun();
-  exanak.status = 2;
+  exanak.exanakiPopoxutyun();
   exanak.exanakiVoroshum();
 
   document.getElementById('Exanak').innerHTML = "Exanak: " + exanak.exanak;
@@ -230,115 +229,76 @@ function draw() {
 
   for (var i in xotakerArr) {
     // console.log(xotakerArr[i].ser);
-    // xotakerArr[i].utel();
-    xotakerArr[i].bazmanal();
-    // xotakerArr[i].mernel();
-
-    // switch (exanak.status) {
-    //   case 0: // Amar
-    //     xotakerArr[i].utel();
-    //     xotakerArr[i].dandaxBazmanal();
-    //     xotakerArr[i].mernel();
-    //     break;
-    //   case 1: // Ashun
-    //     xotakerArr[i].utel();
-    //     xotakerArr[i].intensivBazmanal();
-    //     xotakerArr[i].mernel();
-    //     break;
-    //   case 2: // Dzmer
-    //     xotakerArr[i].qnel(); // qni mej e mtnum -> chi sharjvum ev utum
-    //     xotakerArr[i].mernel();
-    //     break;
-    //   case 3: // Garun
-    //     xotakerArr[i].utel();
-    //     xotakerArr[i].bazmanal();
-    //     xotakerArr[i].mernel();
-    //     break;
-    // }
+    switch (exanak.status) {
+      case 0: // Amar
+        xotakerArr[i].utel();
+        xotakerArr[i].dandaxBazmanal();
+        xotakerArr[i].mernel();
+        break;
+      case 1: // Ashun
+        xotakerArr[i].utel();
+        xotakerArr[i].intensivBazmanal();
+        xotakerArr[i].mernel();
+        break;
+      case 2: // Dzmer
+        xotakerArr[i].qnel(); // qni mej e mtnum -> chi sharjvum ev utum
+        xotakerArr[i].mernel();
+        break;
+      case 3: // Garun
+        xotakerArr[i].utel();
+        xotakerArr[i].bazmanal();
+        xotakerArr[i].mernel();
+        break;
+    }
   }
 
   for (var i in gishatichArr) {
-    // gishatichArr[i].utel();
-    gishatichArr[i].bazmanal();
-    // gishatichArr[i].mernel();
-    // switch (exanak.status) {
-    //   case 0: // Amar
-    //     gishatichArr[i].utel();
-    //     gishatichArr[i].dandaxBazmanal();
-    //     gishatichArr[i].mernel();
-    //     break;
-    //   case 1: // Ashun
-    //     gishatichArr[i].utel();
-    //     gishatichArr[i].intensivBazmanal();
-    //     gishatichArr[i].mernel();
-    //     break;
-    //   case 2: // Dzmer
-    //     gishatichArr[i].utel();
-    //     gishatichArr[i].bazmanal();
-    //     gishatichArr[i].mernel();
-    //     break;
-    //   case 3: // Garun
-    //     gishatichArr[i].utel();
-    //     gishatichArr[i].bazmanal();
-    //     gishatichArr[i].mernel();
-    //     break;
-    // }
+    switch (exanak.status) {
+      case 0: // Amar
+        gishatichArr[i].utel();
+        gishatichArr[i].dandaxBazmanal();
+        gishatichArr[i].mernel();
+        break;
+      case 1: // Ashun
+        gishatichArr[i].utel();
+        gishatichArr[i].intensivBazmanal();
+        gishatichArr[i].mernel();
+        break;
+      case 2: // Dzmer
+        gishatichArr[i].utel();
+        gishatichArr[i].bazmanal();
+        gishatichArr[i].mernel();
+        break;
+      case 3: // Garun
+        gishatichArr[i].utel();
+        gishatichArr[i].bazmanal();
+        gishatichArr[i].mernel();
+        break;
+    }
   }
 
   for (var i in mardArr) {
-
-    // mardArr[i].utel();
-    mardArr[i].bazmanal();
-    // mardArr[i].mernel();
-
-    // switch (exanak.status) {
-    //   case 0: // Amar
-    //     mardArr[i].utel();
-    //     mardArr[i].dandaxBazmanal();
-    //     mardArr[i].mernel();
-    //     break;
-    //   case 1: // Ashun
-    //     mardArr[i].utel();
-    //     mardArr[i].intensivBazmanal();
-    //     mardArr[i].mernel();
-    //     break;
-    //   case 2: // Dzmer
-    //     mardArr[i].utel();
-    //     mardArr[i].bazmanal();
-    //     mardArr[i].mernel();
-    //     break;
-    //   case 3: // Garun
-    //     mardArr[i].utel();
-    //     mardArr[i].bazmanal();
-    //     mardArr[i].mernel();
-    //     break;
-    // }
-  }
- 
-}
-if (
-  function () {
-    for (var y = 0; y < matrix.length; y++) {
-      for (var x = 0; x < matrix[y].length; x++) {
-        if (matrix[y][x] !== 5)
-          return false;
-      }
+    switch (exanak.status) {
+      case 0: // Amar
+        mardArr[i].utel();
+        mardArr[i].dandaxBazmanal();
+        mardArr[i].mernel();
+        break;
+      case 1: // Ashun
+        mardArr[i].utel();
+        mardArr[i].intensivBazmanal();
+        mardArr[i].mernel();
+        break;
+      case 2: // Dzmer
+        mardArr[i].utel();
+        mardArr[i].bazmanal();
+        mardArr[i].mernel();
+        break;
+      case 3: // Garun
+        mardArr[i].utel();
+        mardArr[i].bazmanal();
+        mardArr[i].mernel();
+        break;
     }
-    count++;
-  }
-) {
-  if (count == matrix[0].length * matrix.length) {
-    matrix = [
-      [5, 5, 5, 0, 5, 0, 0, 0, 5, 0, 5, 0, 0], //
-      [5, 0, 0, 0, 5, 5, 0, 0, 5, 0, 5, 5, 0], //
-      [5, 0, 0, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5], //
-      [5, 5, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5], //
-      [5, 0, 0, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5], //  END
-      [5, 0, 0, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5], //
-      [5, 0, 0, 0, 5, 0, 0, 5, 5, 0, 5, 5, 0], //
-      [5, 5, 5, 0, 5, 0, 0, 0, 5, 0, 5, 0, 0], //
-    ];
-
-    isEnd = true;
   }
 }

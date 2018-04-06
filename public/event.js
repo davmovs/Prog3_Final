@@ -1,19 +1,19 @@
-var period = 240;
+var period = 0;
 var count = 80;
 var isEnd = false;
-
-function removeCh(x, y, arr) {
-    for (var el in arr) {
-        if (arr[el].x == randomMatrixX && arr[el].y == randomMatrixY) {
-            arr.splice(el, 1);
-        }
-    }
-}
 
 function event() {
     console.log(period);
     if (period == 240 && !isEnd) {
         period--;
+
+        function removeCh(x, y, arr) {
+            for (var el in arr) {
+                if (arr[el].x == randomMatrixX && arr[el].y == randomMatrixY) {
+                    arr.splice(el, 1);
+                }
+            }
+        }
 
         var
             randomMatrixY = Math.floor(random(0, matrix.length)),
